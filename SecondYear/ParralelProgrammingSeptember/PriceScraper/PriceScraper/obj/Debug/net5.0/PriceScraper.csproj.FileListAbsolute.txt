@@ -1,0 +1,15 @@
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.exe
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.deps.json
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.runtimeconfig.json
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.runtimeconfig.dev.json
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.dll
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\ref\PriceScraper.dll
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\bin\Debug\net5.0\PriceScraper.pdb
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.GeneratedMSBuildEditorConfig.editorconfig
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.AssemblyInfoInputs.cache
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.AssemblyInfo.cs
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.csproj.CoreCompileInputs.cache
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.dll
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\ref\PriceScraper.dll
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.pdb
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.genruntimeconfig.cache
