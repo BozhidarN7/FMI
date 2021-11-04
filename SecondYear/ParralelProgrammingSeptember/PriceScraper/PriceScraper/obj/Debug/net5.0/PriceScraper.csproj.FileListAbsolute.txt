@@ -13,3 +13,4 @@ D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Deb
 D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\ref\PriceScraper.dll
 D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.pdb
 D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.genruntimeconfig.cache
+D:\FMI\SecondYear\ParralelProgrammingSeptember\PriceScraper\PriceScraper\obj\Debug\net5.0\PriceScraper.csproj.AssemblyReference.cache
