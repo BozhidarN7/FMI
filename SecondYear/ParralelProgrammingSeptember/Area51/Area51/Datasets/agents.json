@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Emmitt Benally",
+    "SecurityLevel": 0,
+    "CurrentFloor":  0
+  },
+  {
+    "Name": "Natalie Poli",
+    "SecurityLevel": 1,
+    "CurrentFloor": 1
+  },
+  {
+    "Name": "Marcelle Griego",
+    "SecurityLevel": 2,
+    "CurrentFloor": 2
+  },
+  {
+    "Name": "Zada Attwood",
+    "SecurityLevel": 2,
+    "CurrentFloor": 3
+  }
+]
