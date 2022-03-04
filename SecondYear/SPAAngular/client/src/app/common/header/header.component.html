@@ -1,0 +1,19 @@
+<div class="bg-blue-500 md:h-16 mb-3 flex items-center px-[12rem]">
+  <a routerLink="home">
+    <span class="font-bold text-white md:text-xl"> Home </span>
+  </a>
+
+  <a routerLink="login" style="margin-left: auto; margin-right: 2rem">
+    <span class="text-white ml-auto">Login</span>
+  </a>
+  <a routerLink="register">
+    <span class="text-white">Register</span>
+  </a>
+
+  <ng-container *ngIf="user">
+    <a routerLink="profile" style="margin-left: auto; margin-right: 2rem">
+      <span class="text-white"></span>
+    </a>
+    <button class="text-white cursor-pointer">Logout</button>
+  </ng-container>
+</div>

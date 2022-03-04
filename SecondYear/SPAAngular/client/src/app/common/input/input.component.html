@@ -1,0 +1,16 @@
+<div class="relative mb-8">
+  <input
+    class="peer w-80 border-2 border-slate-400 rounded-xl focus:placeholder:invisible px-6 py-2 ease-linear duration-300 transition-all"
+    id="{{ placeholder.toLowerCase() }}"
+    [type]="type"
+    [name]="name"
+    placeholder="{{ placeholder }}"
+    [(ngModel)]="value"
+  />
+  <label
+    class="bg-white px-2 text-indigo-400 hidden peer-focus:inline-block peer-focus:absolute peer-focus:left-4 peer-focus:-top-3.5"
+    htmlFor="{{ placeholder.toLowerCase() }}"
+  >
+    {{ placeholder }}
+  </label>
+</div>

@@ -1,0 +1,18 @@
+<div class="flex items-center flex-col">
+  <h1 class="md:text-4xl font-bold mb-6">Login</h1>
+  <form class="flex flex-col">
+    <app-input placeholder="Username" type="text"></app-input>
+    <app-input placeholder="Password" type="password"></app-input>
+    <div class="text-blue-400 mb-3 -mt-5">
+      <a routerLink="../register" class="hover:text-blue-700">
+        <span>Create a new account</span>
+      </a>
+    </div>
+    <button
+      class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>

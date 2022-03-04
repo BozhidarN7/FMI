@@ -1,0 +1,73 @@
+<div class="flex items-center flex-col">
+  <h1 class="md:text-4xl font-bold mb-6">Register</h1>
+  <form
+    #userAccountForm="ngForm"
+    (ngSubmit)="register(userAccountForm.value)"
+    *ngIf="!isOrganizationFormOpen"
+    class="flex flex-col items-center"
+  >
+    <app-input placeholder="Username" name="username" type="text"></app-input>
+    <app-input placeholder="Email" name="email" type="email"></app-input>
+    <app-input
+      placeholder="Password"
+      name="password"
+      type="password"
+    ></app-input>
+    <app-input
+      placeholder="Repeat Password"
+      name="RepeatPassword"
+      type="password"
+    ></app-input>
+    <div class="grid grid-cols-2 text-blue-400 mb-3 gap-y-5">
+      <a routerLink="../login" class="hover:text-blue-700">
+        <span>Already have an account then Login</span>
+      </a>
+      <button (click)="changeForm()" class="hover:text-blue-700">
+        Create an organization account
+      </button>
+    </div>
+    <button
+      class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <form
+    *ngIf="isOrganizationFormOpen"
+    #organizatoinAccountForm="ngForm"
+    (ngSubmit)="register(organizatoinAccountForm.value)"
+    class="flex flex-col items-center"
+  >
+    <app-input
+      placeholder="Organization Name"
+      name="organization"
+      type="text"
+    ></app-input>
+    <app-input placeholder="Email" name="email" type="email"></app-input>
+    <app-input
+      placeholder="Password"
+      name="password"
+      type="password"
+    ></app-input>
+    <app-input
+      placeholder="Repeat Password"
+      name="repeatPassword"
+      type="password"
+    ></app-input>
+    <div class="grid grid-cols-2 text-blue-400 mb-3 gap-y-5">
+      <a routerLink="../login" class="hover:text-blue-700">
+        <span>Already have an account then Login</span>
+      </a>
+      <button (click)="changeForm()" class="hover:text-blue-700">
+        Create a user account
+      </button>
+    </div>
+    <button
+      class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
