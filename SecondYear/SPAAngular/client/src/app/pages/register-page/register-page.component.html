@@ -1,22 +1,33 @@
 <div class="flex items-center flex-col">
   <h1 class="md:text-4xl font-bold mb-6">Register</h1>
   <form
-    #userAccountForm="ngForm"
-    (ngSubmit)="register(userAccountForm.value)"
+    (ngSubmit)="register()"
     *ngIf="!isOrganizationFormOpen"
     class="flex flex-col items-center"
   >
-    <app-input placeholder="Username" name="username" type="text"></app-input>
-    <app-input placeholder="Email" name="email" type="email"></app-input>
+    <app-input
+      placeholder="Username"
+      name="username"
+      type="text"
+      (value)="onUsernameChange($event)"
+    ></app-input>
+    <app-input
+      placeholder="Email"
+      name="email"
+      type="email"
+      (value)="onEmailChange($event)"
+    ></app-input>
     <app-input
       placeholder="Password"
       name="password"
       type="password"
+      (value)="onPasswordChange($event)"
     ></app-input>
     <app-input
       placeholder="Repeat Password"
       name="RepeatPassword"
       type="password"
+      (value)="onRepeatPasswordChange($event)"
     ></app-input>
     <div class="grid grid-cols-2 text-blue-400 mb-3 gap-y-5">
       <a routerLink="../login" class="hover:text-blue-700">
@@ -35,25 +46,32 @@
   </form>
   <form
     *ngIf="isOrganizationFormOpen"
-    #organizatoinAccountForm="ngForm"
-    (ngSubmit)="register(organizatoinAccountForm.value)"
+    (ngSubmit)="register()"
     class="flex flex-col items-center"
   >
     <app-input
       placeholder="Organization Name"
       name="organization"
       type="text"
+      (value)="onOrganizationChange($event)"
     ></app-input>
-    <app-input placeholder="Email" name="email" type="email"></app-input>
+    <app-input
+      placeholder="Email"
+      name="email"
+      type="email"
+      (value)="onEmailChange($event)"
+    ></app-input>
     <app-input
       placeholder="Password"
       name="password"
       type="password"
+      (value)="onPasswordChange($event)"
     ></app-input>
     <app-input
       placeholder="Repeat Password"
       name="repeatPassword"
       type="password"
+      (value)="onRepeatPasswordChange($event)"
     ></app-input>
     <div class="grid grid-cols-2 text-blue-400 mb-3 gap-y-5">
       <a routerLink="../login" class="hover:text-blue-700">

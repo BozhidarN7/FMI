@@ -5,7 +5,8 @@
     [type]="type"
     [name]="name"
     placeholder="{{ placeholder }}"
-    [(ngModel)]="value"
+    (ngModelChange)="inputChange($event)"
+    ngModel
   />
   <label
     class="bg-white px-2 text-indigo-400 hidden peer-focus:inline-block peer-focus:absolute peer-focus:left-4 peer-focus:-top-3.5"

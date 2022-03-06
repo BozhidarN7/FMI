@@ -1,31 +1,21 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
 })
-export class InputComponent implements OnInit, OnChanges {
+export class InputComponent implements OnInit {
   @Input() type: string = '';
   @Input() placeholder: string = '';
   @Input() name = '';
-  value = '';
+  @Output() value = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    for (const propName in changes) {
-      const chng = changes[propName];
-      const cur = JSON.stringify(chng.currentValue);
-      const prev = JSON.stringify(chng.previousValue);
-      console.log(this.value);
-    }
+  inputChange(userInput: string) {
+    this.value.emit(userInput);
   }
 }
