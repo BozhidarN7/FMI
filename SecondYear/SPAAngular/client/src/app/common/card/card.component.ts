@@ -24,6 +24,6 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {}
 
   editJob() {
-    this.router.navigate([`../editJob/${this.job._id}`]);
+    this.router.navigate([`../editJob`, this.job._id]);
   }
 }

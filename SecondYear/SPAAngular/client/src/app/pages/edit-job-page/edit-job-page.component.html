@@ -1,1 +1,93 @@
-<p>edit-job-page works!</p>
+<div class="flex items-center flex-col">
+  <h1 class="md:text-4xl font-bold mb-6">Edit Job</h1>
+  <form
+    #createForm="ngForm"
+    (ngSubmit)="create(createForm.value)"
+    class="flex flex-col items-center"
+  >
+    <app-input
+      placeholder="Title"
+      name="title"
+      type="text"
+      (value)="onTitleChange($event)"
+      [inputValue]="job.title"
+    ></app-input>
+
+    <app-input
+      placeholder="Image"
+      name="image"
+      type="text"
+      (value)="onImageChange($event)"
+    ></app-input>
+
+    <select
+      class="w-80 border-2 border-slate-400 rounded-xl px-6 py-2"
+      name="category"
+      ngModel
+    >
+      <option value="">--Please choose an option--</option>
+      <option value="net">.Net Developer</option>
+      <option value="react">React Developer</option>
+      <option value="angular">Angular Developer</option>
+      <option value="java">Java Developer</option>
+      <option value="node">Node.js Developer</option>
+    </select>
+
+    <div class="py-3 self-start">
+      <span class="font-bold">Choose working type</span>
+      <div class="my-2">
+        <input
+          type="radio"
+          id="fullTime"
+          name="workingType"
+          value="full-time"
+          ngModel
+        />
+        <label class="ml-2" for="fullTime">full-time</label>
+      </div>
+      <div class="my-2">
+        <input
+          type="radio"
+          id="partTime"
+          name="workingType"
+          value="part-time"
+          ngModel
+        />
+        <label class="ml-2" for="partTime">part-time</label>
+      </div>
+      <div class="my-2">
+        <input
+          type="radio"
+          id="remote"
+          name="workingType"
+          value="remote"
+          ngModel
+        />
+        <label class="ml-2" for="remote">remote</label>
+      </div>
+    </div>
+
+    <div class="relative mb-8">
+      <textarea
+        class="peer w-80 border-2 border-slate-400 rounded-xl focus:placeholder:invisible px-6 py-2 ease-linear duration-300 transition-all"
+        placeholder="Description"
+        name="description"
+        rows="5"
+        ngModel
+      ></textarea>
+      <label
+        class="bg-white px-2 text-indigo-400 hidden peer-focus:inline-block peer-focus:absolute peer-focus:left-4 peer-focus:-top-3.5"
+        htmlFor="description"
+      >
+        Description
+      </label>
+    </div>
+
+    <button
+      class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>

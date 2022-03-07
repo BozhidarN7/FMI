@@ -1,15 +1,62 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Job } from 'src/app/interfaces/commonInterfaces';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-edit-job-page',
   templateUrl: './edit-job-page.component.html',
-  styleUrls: ['./edit-job-page.component.css']
+  styleUrls: ['./edit-job-page.component.css'],
 })
 export class EditJobPageComponent implements OnInit {
+  job: Job = {
+    _id: '',
+    creatorId: '',
+    description: '',
+    image: '',
+    likes: 0,
+    category: '',
+    workingType: '',
+    title: '',
+  };
 
-  constructor() { }
+  title: string = '';
+  image: string = '';
+  jobId = '';
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private jobService: JobService
+  ) {}
+
+  onTitleChange(userInput: string) {
+    this.title = userInput;
   }
 
+  onImageChange(userInput: string) {
+    this.image = userInput;
+  }
+
+  ngOnInit(): void {
+    this.jobId = this.route.snapshot.paramMap.get('id')!;
+    this.job = this.jobService.getJobById(this.jobId)!;
+  }
+
+  create(data: any) {
+    const description = data.description;
+    const workingType = data.workingType;
+    const category = data.category;
+    if (
+      !this.title ||
+      !description ||
+      !this.image ||
+      !workingType ||
+      !category
+    ) {
+      return;
+    }
+
+    this.router.navigate(['../']);
+  }
 }

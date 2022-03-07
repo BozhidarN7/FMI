@@ -13,7 +13,6 @@ import { CreateAdPageComponent } from './pages/create-ad-page/create-ad-page.com
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { CardComponent } from './common/card/card.component';
 import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
-import { EditJobComponent } from './pages/edit-job/edit-job.component';
 import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.component';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.compon
     JobsComponent,
     CardComponent,
     MyJobsComponent,
-    EditJobComponent,
     EditJobPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],

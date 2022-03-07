@@ -18,7 +18,7 @@ export class JobService {
       image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
     },
     {
-      _id: 'uniqueAd123',
+      _id: 'uniqueAd124',
       creatorId: 'uniqueId124',
       title: 'someTitle',
       likes: 5,
@@ -41,5 +41,9 @@ export class JobService {
   getUserJobs() {
     const userId = JSON.parse(localStorage.getItem('user')!).userId;
     return this.jobs.filter((job) => job.creatorId === userId);
+  }
+
+  getJobById(id: string) {
+    return this.jobs.find((job) => job._id === id);
   }
 }

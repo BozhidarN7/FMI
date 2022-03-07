@@ -6,7 +6,7 @@
     [name]="name"
     placeholder="{{ placeholder }}"
     (ngModelChange)="inputChange($event)"
-    ngModel
+    [(ngModel)]="inputValue"
   />
   <label
     class="bg-white px-2 text-indigo-400 hidden peer-focus:inline-block peer-focus:absolute peer-focus:left-4 peer-focus:-top-3.5"

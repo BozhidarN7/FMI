@@ -8,12 +8,15 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 export class InputComponent implements OnInit {
   @Input() type: string = '';
   @Input() placeholder: string = '';
-  @Input() name = '';
+  @Input() name = 'asdf';
+  @Input() inputValue = '';
   @Output() value = new EventEmitter<string>();
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.inputValue);
+  }
 
   inputChange(userInput: string) {
     this.value.emit(userInput);
