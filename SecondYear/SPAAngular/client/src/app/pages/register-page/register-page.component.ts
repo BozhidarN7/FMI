@@ -58,6 +58,7 @@ export class RegisterPageComponent implements OnInit {
         organization: this.organization,
         email: this.email,
         password: this.password,
+        role: 'organization',
       });
       localStorage.setItem(
         'user',
@@ -70,6 +71,7 @@ export class RegisterPageComponent implements OnInit {
         username: this.username,
         email: this.email,
         password: this.password,
+        role: 'user',
       });
       localStorage.setItem(
         'user',

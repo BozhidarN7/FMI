@@ -3,10 +3,14 @@
     <span class="font-bold text-white md:text-xl"> Home </span>
   </a>
 
-  <a routerLink="login" style="margin-left: auto; margin-right: 2rem">
+  <a
+    *ngIf="!user"
+    routerLink="login"
+    style="margin-left: auto; margin-right: 2rem"
+  >
     <span class="text-white ml-auto">Login</span>
   </a>
-  <a routerLink="register">
+  <a *ngIf="!user" routerLink="register">
     <span class="text-white">Register</span>
   </a>
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Organization, User } from 'src/app/interfaces/commonInterfaces';
 import { OrganizationService } from 'src/app/services/organization.service';
 import { UserService } from 'src/app/services/user.service';
@@ -8,8 +9,9 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  user: Organization | User | undefined = undefined;
+export class HeaderComponent implements OnInit, OnDestroy {
+  user: any = undefined;
+  subscription: Subscription = new Subscription();
 
   constructor(
     private userService: UserService,
@@ -17,12 +19,11 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userInfo = JSON.parse(localStorage.getItem('user')!);
-    if (userInfo.role === 'organization') {
-      this.user = this.organizatoinService.findOrganization(userInfo._id);
-    } else {
-      this.user = this.userService.findUser(userInfo._id);
-    }
-    console.log(this.user);
+    this.subscription = this.userService
+      .getLoggedUser()
+      .subscribe((user) => (this.user = user));
+  }
+  ngOnDestroy() {
+    this.subscription && this.subscription.unsubscribe();
   }
 }

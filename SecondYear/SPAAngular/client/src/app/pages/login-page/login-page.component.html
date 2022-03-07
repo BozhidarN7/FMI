@@ -1,8 +1,16 @@
 <div class="flex items-center flex-col">
   <h1 class="md:text-4xl font-bold mb-6">Login</h1>
-  <form class="flex flex-col">
-    <app-input placeholder="Username" type="text"></app-input>
-    <app-input placeholder="Password" type="password"></app-input>
+  <form (ngSubmit)="login()" class="flex flex-col">
+    <app-input
+      placeholder="Email"
+      type="email"
+      (value)="onEmailChange($event)"
+    ></app-input>
+    <app-input
+      placeholder="Password"
+      type="password"
+      (value)="onPasswordChange($event)"
+    ></app-input>
     <div class="text-blue-400 mb-3 -mt-5">
       <a routerLink="../register" class="hover:text-blue-700">
         <span>Create a new account</span>

@@ -3,6 +3,7 @@ export interface User {
   username: string;
   email: string;
   password: string; // should be hashed
+  role: string;
 }
 
 export interface Organization {
@@ -10,4 +11,5 @@ export interface Organization {
   organization: string;
   email: string;
   password: string;
+  role: string;
 }
