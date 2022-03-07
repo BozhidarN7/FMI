@@ -28,13 +28,17 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    const user = this.userService.findUserByEmail(this.email);
-    console.log(user);
-    console.log(this.password);
-    if (!user || user.password === this.password.trim()) {
+    const user = this.userService.findUserByEmail(this.email.trim());
+
+    if (!user || user.password !== this.password.trim()) {
       return;
     }
+
     this.userService.login(user);
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ userId: user._id, role: 'user' })
+    );
 
     this.router.navigate(['../']);
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
-import { User } from '../interfaces/commonInterfaces';
+import { Organization, User } from '../interfaces/commonInterfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,7 @@ export class UserService {
     {
       _id: 'uniqueId123',
       username: 'Bozhidar',
+      organization: undefined,
       email: 'test@abv.bg',
       password: 'asdf',
       role: 'user',
@@ -34,6 +35,11 @@ export class UserService {
 
   login(user: User) {
     this.loggedUser.next(user);
+  }
+
+  logout() {
+    this.loggedUser.next(undefined);
+    localStorage.removeItem('user');
   }
 
   getLoggedUser() {

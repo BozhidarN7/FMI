@@ -1,6 +1,7 @@
 export interface User {
   _id: string;
-  username: string;
+  username: string | undefined;
+  organization: string | undefined;
   email: string;
   password: string; // should be hashed
   role: string;

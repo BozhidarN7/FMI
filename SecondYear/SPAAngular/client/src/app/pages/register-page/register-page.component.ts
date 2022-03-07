@@ -53,9 +53,10 @@ export class RegisterPageComponent implements OnInit {
 
     if (this.isOrganizationFormOpen) {
       const _id = uuid.v4();
-      this.organizationService.addOrganization({
+      this.userService.addUser({
         _id,
         organization: this.organization,
+        username: undefined,
         email: this.email,
         password: this.password,
         role: 'organization',
@@ -69,6 +70,7 @@ export class RegisterPageComponent implements OnInit {
       this.userService.addUser({
         _id,
         username: this.username,
+        organization: undefined,
         email: this.email,
         password: this.password,
         role: 'user',
