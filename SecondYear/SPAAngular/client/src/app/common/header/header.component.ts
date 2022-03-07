@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Organization, User } from 'src/app/interfaces/commonInterfaces';
 import { OrganizationService } from 'src/app/services/organization.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  user: any = undefined;
+  user: any = true;
   subscription: Subscription = new Subscription();
 
   constructor(

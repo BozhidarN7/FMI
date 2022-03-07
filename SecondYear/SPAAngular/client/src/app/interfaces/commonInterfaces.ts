@@ -14,3 +14,14 @@ export interface Organization {
   password: string;
   role: string;
 }
+
+export interface Job {
+  _id: string;
+  title: string;
+  description: string;
+  likes: number;
+  workingType: string;
+  category: string;
+  image: string;
+  creatorId: string;
+}

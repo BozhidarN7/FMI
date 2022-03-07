@@ -1,6 +1,6 @@
 <div class="bg-blue-500 md:h-16 mb-3 flex items-center px-[12rem]">
-  <a routerLink="home">
-    <span class="font-bold text-white md:text-xl"> Home </span>
+  <a routerLink="jobs">
+    <span class="font-bold text-white md:text-xl"> Jobs </span>
   </a>
 
   <a
@@ -15,8 +15,11 @@
   </a>
 
   <ng-container *ngIf="user">
-    <a routerLink="profile" style="margin-left: auto; margin-right: 2rem">
-      <span class="text-white"></span>
+    <a routerLink="../create" style="margin-left: auto; margin-right: 2rem">
+      <span class="text-white">Create Job</span>
+    </a>
+    <a routerLink="../myJobs" style="margin-right: 2rem">
+      <span class="text-white">My Jobs</span>
     </a>
     <button (click)="logout()" class="text-white cursor-pointer">Logout</button>
   </ng-container>

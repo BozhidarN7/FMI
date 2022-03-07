@@ -9,6 +9,12 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { InputComponent } from './common/input/input.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { CreateAdPageComponent } from './pages/create-ad-page/create-ad-page.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
+import { CardComponent } from './common/card/card.component';
+import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
+import { EditJobComponent } from './pages/edit-job/edit-job.component';
+import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +24,12 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     HomePageComponent,
     InputComponent,
     RegisterPageComponent,
+    CreateAdPageComponent,
+    JobsComponent,
+    CardComponent,
+    MyJobsComponent,
+    EditJobComponent,
+    EditJobPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
