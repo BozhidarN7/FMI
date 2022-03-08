@@ -43,7 +43,7 @@ export class LoginPageComponent implements OnInit {
     this.userService.login(user);
     localStorage.setItem(
       'user',
-      JSON.stringify({ userId: user._id, role: 'user' })
+      JSON.stringify({ userId: user._id, role: user.role })
     );
 
     this.router.navigate(['../']);

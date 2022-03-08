@@ -1,4 +1,4 @@
-import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
+import * as uuid from 'uuid';
 import { Injectable } from '@angular/core';
 import { Job } from '../interfaces/commonInterfaces';
 
@@ -20,6 +20,7 @@ export class JobService {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png',
       usersLiked: [],
       usersApplied: [],
+      applications: [],
     },
     {
       _id: 'uniqueJobId2',
@@ -33,6 +34,7 @@ export class JobService {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
       usersLiked: [],
       usersApplied: [],
+      applications: [],
     },
   ];
 
@@ -71,5 +73,6 @@ export class JobService {
   apply(jobId: string, userId: string) {
     const job = this.jobs.find((job) => job._id === jobId)!;
     job.usersApplied.push(userId);
+    job.applications.push({ _id: uuid.v4(), userId, status: 'pending' });
   }
 }

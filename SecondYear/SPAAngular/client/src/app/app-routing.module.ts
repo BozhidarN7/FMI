@@ -7,6 +7,7 @@ import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'appliedJobs',
     component: AppliedJobsComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfilePageComponent,
   },
 ];
 @NgModule({

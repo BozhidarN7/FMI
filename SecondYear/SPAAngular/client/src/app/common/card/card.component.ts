@@ -21,6 +21,7 @@ export class CardComponent implements OnInit {
     title: '',
     usersLiked: [],
     usersApplied: [],
+    applications: [],
   };
   @Input() isMyJobsPage = false;
   userId = '';

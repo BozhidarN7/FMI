@@ -15,6 +15,11 @@ export interface Organization {
   role: string;
 }
 
+export interface Application {
+  _id: string;
+  userId: string;
+  status: string;
+}
 export interface Job {
   _id: string;
   title: string;
@@ -26,4 +31,5 @@ export interface Job {
   creatorId: string;
   usersLiked: Array<string>;
   usersApplied: Array<string>;
+  applications: Array<Application>;
 }

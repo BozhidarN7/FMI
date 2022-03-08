@@ -1,0 +1,60 @@
+<div class="grid grid-cols-3">
+  <div class="flex items-center flex-col">
+    <span class="md:text-4xl font-bold mb-6">Change Password</span>
+    <form (ngSubmit)="changePassword()" class="flex flex-col items-center">
+      <app-input
+        placeholder="Old Password"
+        name="oldPassword"
+        type="password"
+        (value)="onOldPasswordChange($event)"
+      ></app-input>
+      <app-input
+        placeholder="New Password"
+        name="newPassword"
+        type="password"
+        (value)="onNewPasswordChange($event)"
+      ></app-input>
+
+      <app-input
+        placeholder="Confirm new Password"
+        name="confirmPassword"
+        type="password"
+        (value)="onConfirmPasswordChange($event)"
+      ></app-input>
+      <button
+        class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div class="flex items-center flex-col">
+    <span class="md:text-4xl font-bold mb-6">Change Username</span>
+    <form (ngSubmit)="changeUsername()" class="flex flex-col items-center">
+      <app-input
+        placeholder="New Username"
+        name="newUsername"
+        type="text"
+        (value)="onNewUsernameChange($event)"
+      ></app-input>
+
+      <button
+        class="w-24 py-2 m-auto rounded-xl border-indigo-400 border-2 hover:bg-slate-200 active:bg-slate-400 disabled:bg-slate-400"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div>
+    <button
+      (click)="deleteAccount()"
+      class="bg-red-300 border-2 rounded-xl p-2 hover:bg-red-600 hover:text-white"
+    >
+      Delete Account
+    </button>
+  </div>
+</div>

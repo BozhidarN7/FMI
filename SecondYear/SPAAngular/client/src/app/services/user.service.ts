@@ -53,4 +53,9 @@ export class UserService {
   getLoggedUser() {
     return this.loggedUser;
   }
+
+  deleteAccount(userId: string) {
+    this.logout();
+    // this.users.splice(this.users.indexOf(this.users.find(user) => user._id === userId))
+  }
 }

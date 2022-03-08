@@ -50,6 +50,7 @@ export class CreateAdPageComponent implements OnInit {
       likes: 0,
       usersLiked: [],
       usersApplied: [],
+      applications: [],
     });
 
     this.router.navigate(['../myJobs']);

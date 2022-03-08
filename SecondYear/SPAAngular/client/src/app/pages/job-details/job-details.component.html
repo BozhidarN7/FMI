@@ -1,5 +1,5 @@
 <div class="px-[12rem] grid grid-cols-3 gap-x-10">
-  <div class="flex w-[28rem] flex-col mx-14 my-2 shadow-xl rounded-xl">
+  <div class="flex w-[28rem] flex-col my-2 mr-14 shadow-xl rounded-xl">
     <div class="grid grid-rows-1 grid-cols-1">
       <img class="w-full h-60" [src]="job.image" alt="job" />
     </div>
@@ -48,41 +48,48 @@
         Apply
       </button>
     </div>
-    <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
-      <span class="font-bold mb-3 block text-xl">Candidates: </span>
-      <div class="grid grid-cols-2">
-        <span class="self-center">Ivan Ivanov</span>
-        <div>
-          <button
-            class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
-          >
-            Approve
-          </button>
-          <button
-            class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
-          >
-            Reject
-          </button>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="role === 'organizatoin'" class="overflow-y-scroll h-[20rem]">
-      <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
-      <div class="grid grid-cols-1">
-        <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivanov</span>
+  </div>
+  <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
+    <span class="font-bold mb-3 block text-xl">Candidates: </span>
+    <div class="grid grid-cols-2">
+      <span class="self-center">Ivan Ivanov</span>
+      <div>
+        <button
+          class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+        >
+          Approve
+        </button>
+        <button
+          class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+        >
+          Reject
+        </button>
       </div>
     </div>
   </div>
+  <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
+    <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
+    <div class="grid grid-cols-1">
+      <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivanov</span>
+    </div>
+  </div>
 
-  <div
-    class="mx-[12rem] my-3 shadow-xl col-start-2 col-end-4 row-start-1 row-end-2 rounded-xl w-ful"
-  >
+  <div class="my-3 shadow-xl col-start-1 col-end-3 rounded-xl">
     <h4 class="font-bold mb-3 pl-5 pt-5">Description</h4>
     <p class="px-5">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-      omnis! Dolores fuga quasi dignissimos reprehenderit velit, quibusdam ut
-      repudiandae similique itaque doloribus sunt a explicabo veniam nemo saepe
-      aspernatur libero?
+      {{ job.description }}
+    </p>
+  </div>
+  <div
+    *ngIf="role === 'user'"
+    class="my-3 shadow-xl rounded-xl w-ful row-start-1 row-end-2 col-start-2 col-end-3"
+  >
+    <h4 class="font-bold mb-3 pl-5 pt-5">Application status</h4>
+    <p *ngIf="!applicationApproved" class="px-5">
+      Your applications is still not approved
+    </p>
+    <p *ngIf="applicationApproved" class="px-5">
+      Your applications is approved. Your in!. Congrats!
     </p>
   </div>
 </div>

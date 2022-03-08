@@ -15,6 +15,5 @@ export class AppliedJobsComponent implements OnInit {
   ngOnInit(): void {
     this.userId = JSON.parse(localStorage.getItem('user')!).userId;
     this.jobs = this.jobService.getAppliedJobs(this.userId);
-    console.log(this.jobs);
   }
 }

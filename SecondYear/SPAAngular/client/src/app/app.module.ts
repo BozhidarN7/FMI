@@ -16,6 +16,7 @@ import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
 import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.componen
     EditJobPageComponent,
     JobDetailsComponent,
     AppliedJobsComponent,
+    ProfilePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
