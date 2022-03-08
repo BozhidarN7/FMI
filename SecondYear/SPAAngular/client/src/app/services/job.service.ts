@@ -50,6 +50,10 @@ export class JobService {
     return this.jobs.find((job) => job._id === id);
   }
 
+  getAppliedJobs(userId: string) {
+    return this.jobs.filter((job) => job.usersApplied.includes(userId));
+  }
+
   editJob(id: string, data: any) {
     let job = this.getJobById(id)!;
     const jobIndex = this.jobs.indexOf(job);

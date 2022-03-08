@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.component';
 import { CreateAdPageComponent } from './pages/create-ad-page/create-ad-page.component';
 import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: JobDetailsComponent,
+  },
+  {
+    path: 'appliedJobs',
+    component: AppliedJobsComponent,
   },
 ];
 @NgModule({

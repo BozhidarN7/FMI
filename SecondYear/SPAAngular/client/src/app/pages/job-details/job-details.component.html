@@ -20,7 +20,7 @@
         <span class="font-bold">Likes: </span>{{ job.likes }}
       </span>
     </div>
-    <div class="self-center">
+    <div *ngIf="role === 'organization'" class="self-center">
       <button
         class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20"
       >
@@ -32,29 +32,57 @@
         Delete
       </button>
     </div>
-  </div>
-  <div class="overflow-y-scroll h-[20rem]">
-    <span class="font-bold mb-3 block text-xl">Candidates: </span>
-    <div class="grid grid-cols-2">
-      <span class="self-center">Ivan Ivanov</span>
-      <div>
-        <button
-          class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
-        >
-          Approve
-        </button>
-        <button
-          class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
-        >
-          Reject
-        </button>
+    <div *ngIf="role === 'user'" class="self-center">
+      <button
+        (click)="like()"
+        class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20 disabled:bg-slate-300 disabled:text-black"
+        [disabled]="liked"
+      >
+        Like
+      </button>
+      <button
+        (click)="apply()"
+        class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20 disabled:bg-slate-300 disabled:text-black"
+        [disabled]="applied"
+      >
+        Apply
+      </button>
+    </div>
+    <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
+      <span class="font-bold mb-3 block text-xl">Candidates: </span>
+      <div class="grid grid-cols-2">
+        <span class="self-center">Ivan Ivanov</span>
+        <div>
+          <button
+            class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+          >
+            Approve
+          </button>
+          <button
+            class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+          >
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="role === 'organizatoin'" class="overflow-y-scroll h-[20rem]">
+      <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
+      <div class="grid grid-cols-1">
+        <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivanov</span>
       </div>
     </div>
   </div>
-  <div class="overflow-y-scroll h-[20rem]">
-    <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
-    <div class="grid grid-cols-1">
-      <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivanov</span>
-    </div>
+
+  <div
+    class="mx-[12rem] my-3 shadow-xl col-start-2 col-end-4 row-start-1 row-end-2 rounded-xl w-ful"
+  >
+    <h4 class="font-bold mb-3 pl-5 pt-5">Description</h4>
+    <p class="px-5">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+      omnis! Dolores fuga quasi dignissimos reprehenderit velit, quibusdam ut
+      repudiandae similique itaque doloribus sunt a explicabo veniam nemo saepe
+      aspernatur libero?
+    </p>
   </div>
 </div>

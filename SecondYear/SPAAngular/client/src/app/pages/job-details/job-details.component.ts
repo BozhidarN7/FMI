@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/interfaces/commonInterfaces';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-job-details',
@@ -19,7 +20,29 @@ export class JobDetailsComponent implements OnInit {
     usersLiked: [],
     usersApplied: [],
   };
-  constructor() {}
+  userId = '';
+  role = '';
+  liked = false;
+  applied = false;
 
-  ngOnInit(): void {}
+  constructor(private jobService: JobService) {}
+
+  ngOnInit(): void {
+    this.role = JSON.parse(localStorage.getItem('user')!).role;
+    this.userId = JSON.parse(localStorage.getItem('user')!).userId;
+
+    if (this.job) {
+      this.liked = this.job.usersLiked.includes(this.userId);
+      this.applied = this.job.usersApplied.includes(this.userId);
+    }
+  }
+
+  like() {
+    this.jobService.like(this.job._id, this.userId);
+    this.liked = true;
+  }
+  apply() {
+    this.jobService.apply(this.job._id, this.userId);
+    this.applied = true;
+  }
 }

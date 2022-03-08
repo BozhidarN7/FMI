@@ -15,7 +15,10 @@
   </a>
 
   <ng-container *ngIf="user">
-    <a routerLink="../create" style="margin-left: auto; margin-right: 2rem">
+    <a
+      routerLink="../appliedJobs"
+      style="margin-left: auto; margin-right: 2rem"
+    >
       <span class="text-white">Applied Jobs</span>
     </a>
     <button (click)="logout()" class="text-white cursor-pointer">Logout</button>
