@@ -8,12 +8,20 @@ import { Organization, User } from '../interfaces/commonInterfaces';
 export class UserService {
   users: User[] = [
     {
-      _id: 'uniqueId123',
+      _id: 'uniqueId1',
       username: 'Bozhidar',
       organization: undefined,
       email: 'test@abv.bg',
       password: 'asdf',
       role: 'user',
+    },
+    {
+      _id: 'uniqueId2',
+      username: undefined,
+      organization: 'Google',
+      email: 'test1@abv.bg',
+      password: 'asdf',
+      role: 'organization',
     },
   ];
   loggedUser = new Subject();

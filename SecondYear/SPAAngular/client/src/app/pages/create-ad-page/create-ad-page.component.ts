@@ -48,6 +48,7 @@ export class CreateAdPageComponent implements OnInit {
       image: this.image,
       title: this.title,
       likes: 0,
+      usersLiked: [],
     });
 
     this.router.navigate(['../myJobs']);

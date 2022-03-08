@@ -1,8 +1,10 @@
 <div
-  (click)="openJobDetails()"
   class="flex w-[28rem] flex-col mx-14 my-2 shadow-xl rounded-xl cursor-pointer hover:scale-105 ease-in duration-150"
 >
-  <div class="grid grid-rows-1 grid-cols-1">
+  <div (click)="openJobDetails()" class="grid grid-rows-1 grid-cols-1">
+    <div class="absolute text-blue-500 m-3 p-2 z-20">
+      {{ organization }}
+    </div>
     <div
       *ngIf="isMyJobsPage"
       (click)="editJob()"
@@ -25,7 +27,7 @@
     </div>
     <img class="w-full h-60" [src]="job.image" alt="job" />
   </div>
-  <div class="flex flex-wrap px-8 pb-4">
+  <div (click)="openJobDetails()" class="flex flex-wrap px-8 pb-4">
     <span class="basis-1/2">
       <span class="font-bold">Title:</span>
       {{ job.title }}
@@ -41,5 +43,19 @@
     <span class="basis-1/2 text-right">
       <span class="font-bold">Likes: </span>{{ job.likes }}
     </span>
+  </div>
+  <div *ngIf="userRole === 'user'" class="self-center">
+    <button
+      (click)="like()"
+      class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20 disabled:bg-slate-300 disabled:text-black"
+      [disabled]="liked"
+    >
+      Like
+    </button>
+    <button
+      class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20 disabled:bg-slate-300 disabled:text-black"
+    >
+      Apply
+    </button>
   </div>
 </div>

@@ -16,6 +16,7 @@ export class JobDetailsComponent implements OnInit {
     category: 'java',
     workingType: 'full-time',
     image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
+    usersLiked: [],
   };
   constructor() {}
 

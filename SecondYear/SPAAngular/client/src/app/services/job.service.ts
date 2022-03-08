@@ -8,24 +8,29 @@ import { Job } from '../interfaces/commonInterfaces';
 export class JobService {
   jobs: Job[] = [
     {
-      _id: 'uniqueAd123',
-      creatorId: 'uniqueId123',
-      title: 'someTitle',
-      likes: 5,
-      description: 'asdf',
-      category: 'java',
+      _id: 'uniqueJobId1',
+      creatorId: 'uniqueId2',
+      title: 'Junior React Developer',
+      likes: 0,
+      description:
+        'Do not hesitate and come to work for the best company in Bulgaria',
+      category: 'angular',
       workingType: 'full-time',
-      image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png',
+      usersLiked: [],
     },
     {
-      _id: 'uniqueAd124',
-      creatorId: 'uniqueId124',
-      title: 'someTitle',
-      likes: 5,
-      description: 'asdf',
-      category: 'java',
+      _id: 'uniqueJobId2',
+      creatorId: 'uniqueId2',
+      title: 'Seniour React Developer',
+      likes: 0,
+      description: 'We give the highest salary',
+      category: 'react',
       workingType: 'full-time',
-      image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
+      usersLiked: [],
     },
   ];
 
@@ -49,5 +54,11 @@ export class JobService {
 
     job = { ...job, ...data };
     this.jobs[jobIndex] = job;
+  }
+
+  like(jobId: string, userId: string) {
+    const job = this.jobs.find((job) => job._id === jobId)!;
+    job.usersLiked.push(userId);
+    job.likes++;
   }
 }

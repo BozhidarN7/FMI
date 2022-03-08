@@ -18,6 +18,7 @@ export class EditJobPageComponent implements OnInit {
     category: '',
     workingType: '',
     title: '',
+    usersLiked: [],
   };
 
   title: string = '';

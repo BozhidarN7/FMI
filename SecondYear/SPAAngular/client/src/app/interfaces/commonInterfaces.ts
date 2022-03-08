@@ -24,4 +24,5 @@ export interface Job {
   category: string;
   image: string;
   creatorId: string;
+  usersLiked: Array<string>;
 }
