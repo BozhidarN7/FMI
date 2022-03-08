@@ -20,12 +20,14 @@ export class CardComponent implements OnInit {
     workingType: '',
     title: '',
     usersLiked: [],
+    usersApplied: [],
   };
   @Input() isMyJobsPage = false;
   userId = '';
   userRole = '';
   organization = '';
   liked = false;
+  applied = false;
 
   constructor(
     private router: Router,
@@ -42,6 +44,7 @@ export class CardComponent implements OnInit {
         this.job.creatorId
       ).organization!;
       this.liked = this.job.usersLiked.includes(this.userId);
+      this.applied = this.job.usersApplied.includes(this.userId);
     }
   }
 
@@ -56,5 +59,9 @@ export class CardComponent implements OnInit {
   like() {
     this.jobService.like(this.job._id, this.userId);
     this.liked = true;
+  }
+  apply() {
+    this.jobService.apply(this.job._id, this.userId);
+    this.applied = true;
   }
 }

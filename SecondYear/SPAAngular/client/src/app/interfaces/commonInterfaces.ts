@@ -25,4 +25,5 @@ export interface Job {
   image: string;
   creatorId: string;
   usersLiked: Array<string>;
+  usersApplied: Array<string>;
 }

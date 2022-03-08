@@ -53,7 +53,9 @@
       Like
     </button>
     <button
+      (click)="apply()"
       class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20 disabled:bg-slate-300 disabled:text-black"
+      [disabled]="applied"
     >
       Apply
     </button>

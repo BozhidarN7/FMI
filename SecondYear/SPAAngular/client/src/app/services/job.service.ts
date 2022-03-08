@@ -19,6 +19,7 @@ export class JobService {
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png',
       usersLiked: [],
+      usersApplied: [],
     },
     {
       _id: 'uniqueJobId2',
@@ -31,6 +32,7 @@ export class JobService {
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
       usersLiked: [],
+      usersApplied: [],
     },
   ];
 
@@ -60,5 +62,10 @@ export class JobService {
     const job = this.jobs.find((job) => job._id === jobId)!;
     job.usersLiked.push(userId);
     job.likes++;
+  }
+
+  apply(jobId: string, userId: string) {
+    const job = this.jobs.find((job) => job._id === jobId)!;
+    job.usersApplied.push(userId);
   }
 }
