@@ -30,4 +30,8 @@ export class CardComponent implements OnInit {
   editJob() {
     this.router.navigate([`../editJob`, this.job._id]);
   }
+
+  openJobDetails() {
+    this.router.navigate(['../details', this.job._id]);
+  }
 }

@@ -1,0 +1,60 @@
+<div class="px-[12rem] grid grid-cols-3 gap-x-10">
+  <div class="flex w-[28rem] flex-col mx-14 my-2 shadow-xl rounded-xl">
+    <div class="grid grid-rows-1 grid-cols-1">
+      <img class="w-full h-60" [src]="job.image" alt="job" />
+    </div>
+    <div class="flex flex-wrap px-8 pb-4">
+      <span class="basis-1/2">
+        <span class="font-bold">Title:</span>
+        {{ job.title }}
+      </span>
+      <span class="basis-1/2 text-right">
+        <span class="font-bold">Category:</span>
+        {{ job.category }}
+      </span>
+      <span class="basis-1/2">
+        <span class="font-bold">Working Type:</span>
+        {{ job.workingType }}
+      </span>
+      <span class="basis-1/2 text-right">
+        <span class="font-bold">Likes: </span>{{ job.likes }}
+      </span>
+    </div>
+    <div class="self-center">
+      <button
+        class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20"
+      >
+        Edit
+      </button>
+      <button
+        class="bg-red-300 border-2 rounded-xl p-2 hover:bg-red-600 hover:text-white w-20"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+  <div class="overflow-y-scroll h-[20rem]">
+    <span class="font-bold mb-3 block text-xl">Candidates: </span>
+    <div class="grid grid-cols-2">
+      <span class="self-center">Ivan Ivano</span>
+      <div>
+        <button
+          class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+        >
+          Approve
+        </button>
+        <button
+          class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
+        >
+          Reject
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="overflow-y-scroll h-[20rem]">
+    <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
+    <div class="grid grid-cols-1">
+      <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivano</span>
+    </div>
+  </div>
+</div>

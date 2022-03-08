@@ -1,4 +1,5 @@
 <div
+  (click)="openJobDetails()"
   class="flex w-[28rem] flex-col mx-14 my-2 shadow-xl rounded-xl cursor-pointer hover:scale-105 ease-in duration-150"
 >
   <div class="grid grid-rows-1 grid-cols-1">
@@ -38,7 +39,7 @@
       {{ job.workingType }}
     </span>
     <span class="basis-1/2 text-right">
-      <span class="font-bold">Likes:</span>{{ job.likes }}
+      <span class="font-bold">Likes: </span>{{ job.likes }}
     </span>
   </div>
 </div>
