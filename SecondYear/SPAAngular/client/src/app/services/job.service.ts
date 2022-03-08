@@ -13,7 +13,7 @@ export class JobService {
       title: 'someTitle',
       likes: 5,
       description: 'asdf',
-      category: 'Java',
+      category: 'java',
       workingType: 'full-time',
       image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
     },
@@ -23,7 +23,7 @@ export class JobService {
       title: 'someTitle',
       likes: 5,
       description: 'asdf',
-      category: 'Java',
+      category: 'java',
       workingType: 'full-time',
       image: 'https://rdp.epam.com/Content/images/BigLogo/NET_Icon.png',
     },
@@ -45,5 +45,13 @@ export class JobService {
 
   getJobById(id: string) {
     return this.jobs.find((job) => job._id === id);
+  }
+
+  editJob(id: string, data: any) {
+    let job = this.getJobById(id)!;
+    const jobIndex = this.jobs.indexOf(job);
+
+    job = { ...job, ...data };
+    this.jobs[jobIndex] = job;
   }
 }

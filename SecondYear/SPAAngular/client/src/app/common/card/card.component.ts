@@ -18,10 +18,14 @@ export class CardComponent implements OnInit {
     workingType: '',
     title: '',
   };
+  @Input() isMyJobsPage = false;
+  userId = '';
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userId = JSON.parse(localStorage.getItem('user')!).userId;
+  }
 
   editJob() {
     this.router.navigate([`../editJob`, this.job._id]);

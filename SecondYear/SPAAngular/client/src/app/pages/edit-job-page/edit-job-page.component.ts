@@ -41,13 +41,15 @@ export class EditJobPageComponent implements OnInit {
   ngOnInit(): void {
     this.jobId = this.route.snapshot.paramMap.get('id')!;
     this.job = this.jobService.getJobById(this.jobId)!;
-    console.log(this.job);
+    this.image = this.job.image;
+    this.title = this.job.title;
   }
 
   create(data: any) {
     const description = data.description;
     const workingType = data.workingType;
     const category = data.category;
+
     if (
       !this.title ||
       !description ||
@@ -57,7 +59,13 @@ export class EditJobPageComponent implements OnInit {
     ) {
       return;
     }
-
-    this.router.navigate(['../']);
+    this.jobService.editJob(this.jobId, {
+      description,
+      workingType,
+      category: category.split(' ')[0].toLowerCase(),
+      title: this.title,
+      image: this.image,
+    });
+    this.router.navigate(['../myJobs']);
   }
 }

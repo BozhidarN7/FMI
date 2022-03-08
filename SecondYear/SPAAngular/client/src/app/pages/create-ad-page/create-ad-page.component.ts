@@ -43,7 +43,7 @@ export class CreateAdPageComponent implements OnInit {
       creatorId: JSON.parse(localStorage.getItem('user')!).userId,
       description,
       workingType,
-      category,
+      category: category.split(' ')[0].toLowerCase(),
       image: this.image,
       title: this.title,
       likes: 0,
