@@ -18,18 +18,19 @@
       name="image"
       type="text"
       (value)="onImageChange($event)"
+      [inputValue]="job.image"
     ></app-input>
 
     <select
       class="w-80 border-2 border-slate-400 rounded-xl px-6 py-2"
       name="category"
-      ngModel
+      [(ngModel)]="job.category"
     >
       <option value="">--Please choose an option--</option>
       <option value="net">.Net Developer</option>
       <option value="react">React Developer</option>
       <option value="angular">Angular Developer</option>
-      <option value="java">Java Developer</option>
+      <option value="Java">Java Developer</option>
       <option value="node">Node.js Developer</option>
     </select>
 
@@ -41,7 +42,7 @@
           id="fullTime"
           name="workingType"
           value="full-time"
-          ngModel
+          [(ngModel)]="job.workingType"
         />
         <label class="ml-2" for="fullTime">full-time</label>
       </div>
@@ -51,7 +52,7 @@
           id="partTime"
           name="workingType"
           value="part-time"
-          ngModel
+          [(ngModel)]="job.workingType"
         />
         <label class="ml-2" for="partTime">part-time</label>
       </div>
@@ -61,7 +62,7 @@
           id="remote"
           name="workingType"
           value="remote"
-          ngModel
+          [(ngModel)]="job.workingType"
         />
         <label class="ml-2" for="remote">remote</label>
       </div>
@@ -73,7 +74,7 @@
         placeholder="Description"
         name="description"
         rows="5"
-        ngModel
+        [(ngModel)]="job.description"
       ></textarea>
       <label
         class="bg-white px-2 text-indigo-400 hidden peer-focus:inline-block peer-focus:absolute peer-focus:left-4 peer-focus:-top-3.5"

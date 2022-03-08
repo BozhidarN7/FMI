@@ -41,6 +41,7 @@ export class EditJobPageComponent implements OnInit {
   ngOnInit(): void {
     this.jobId = this.route.snapshot.paramMap.get('id')!;
     this.job = this.jobService.getJobById(this.jobId)!;
+    console.log(this.job);
   }
 
   create(data: any) {
