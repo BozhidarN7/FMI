@@ -38,10 +38,6 @@ export class JobService {
   getJobs() {
     return this.jobs;
   }
-  getUserJobs() {
-    const userId = JSON.parse(localStorage.getItem('user')!).userId;
-    return this.jobs.filter((job) => job.creatorId === userId);
-  }
 
   getJobById(id: string) {
     return this.jobs.find((job) => job._id === id);

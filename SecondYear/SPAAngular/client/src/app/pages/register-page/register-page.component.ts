@@ -47,7 +47,23 @@ export class RegisterPageComponent implements OnInit {
   }
 
   register() {
+    if (!this.password || !this.confirmPassword || !this.email) {
+      window.alert('Please fill the form!');
+      return;
+    }
+
+    if (this.isOrganizationFormOpen && !this.organization) {
+      window.alert('Please fill the form!');
+      return;
+    }
+
+    if (!this.isOrganizationFormOpen && !this.username) {
+      window.alert('Please fill the form!');
+      return;
+    }
+
     if (this.password !== this.confirmPassword) {
+      window.alert('Password mismatch!');
       return;
     }
 

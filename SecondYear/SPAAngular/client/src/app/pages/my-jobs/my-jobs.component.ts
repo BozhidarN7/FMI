@@ -12,6 +12,9 @@ export class MyJobsComponent implements OnInit {
   constructor(private advertisementService: JobService) {}
 
   ngOnInit(): void {
-    this.jobs = this.advertisementService.getUserJobs();
+    const userId = JSON.parse(localStorage.getItem('user')!).userId;
+    this.jobs = this.advertisementService
+      .getJobs()
+      .filter((job) => job.creatorId === userId);
   }
 }

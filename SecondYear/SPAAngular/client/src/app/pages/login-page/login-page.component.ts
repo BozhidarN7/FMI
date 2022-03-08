@@ -30,7 +30,13 @@ export class LoginPageComponent implements OnInit {
   login() {
     const user = this.userService.findUserByEmail(this.email.trim());
 
-    if (!user || user.password !== this.password.trim()) {
+    if (!user) {
+      window.alert('Please fill the form!');
+      return;
+    }
+
+    if (user.password !== this.password.trim()) {
+      window.alert('Login failed!');
       return;
     }
 

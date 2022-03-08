@@ -35,6 +35,7 @@ export class CreateAdPageComponent implements OnInit {
       !workingType ||
       !category
     ) {
+      window.alert('Please fill the form!');
       return;
     }
 

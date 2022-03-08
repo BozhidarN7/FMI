@@ -14,9 +14,7 @@ export class InputComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.inputValue);
-  }
+  ngOnInit(): void {}
 
   inputChange(userInput: string) {
     this.value.emit(userInput);
