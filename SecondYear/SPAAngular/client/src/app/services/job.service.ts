@@ -20,7 +20,13 @@ export class JobService {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png',
       usersLiked: [],
       usersApplied: [],
-      applications: [],
+      applications: [
+        // {
+        //   _id: 'uniquerAppId',
+        //   userId: 'uniqueId1',
+        //   status: 'pending',
+        // },
+      ],
     },
     {
       _id: 'uniqueJobId2',
@@ -74,5 +80,21 @@ export class JobService {
     const job = this.jobs.find((job) => job._id === jobId)!;
     job.usersApplied.push(userId);
     job.applications.push({ _id: uuid.v4(), userId, status: 'pending' });
+  }
+
+  getApplications(jobId: string) {
+    return this.getJobById(jobId)!.applications;
+  }
+
+  approveApplication(jobId: string, applicationId: string) {
+    this.getJobById(jobId)!.applications.find(
+      (app) => app._id == applicationId
+    )!.status = 'approved';
+  }
+
+  rejectApplication(jobId: string, applicationId: string) {
+    this.getJobById(jobId)!.applications.find(
+      (app) => app._id == applicationId
+    )!.status = 'rejected';
   }
 }

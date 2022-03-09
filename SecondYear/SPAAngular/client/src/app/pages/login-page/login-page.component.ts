@@ -28,10 +28,13 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
+    if (!this.email || !this.password) {
+      window.alert('Please fill the form!');
+    }
     const user = this.userService.findUserByEmail(this.email.trim());
 
     if (!user) {
-      window.alert('Please fill the form!');
+      window.alert('Login failed!');
       return;
     }
 

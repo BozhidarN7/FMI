@@ -51,15 +51,18 @@
   </div>
   <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
     <span class="font-bold mb-3 block text-xl">Candidates: </span>
-    <div class="grid grid-cols-2">
-      <span class="self-center">Ivan Ivanov</span>
+    <span *ngIf="appliedCandidates.length === 0">Nobody has applied yet!</span>
+    <div *ngFor="let candidate of appliedCandidates" class="grid grid-cols-2">
+      <span class="self-center">{{ candidate.username }}</span>
       <div>
         <button
+          (click)="approveCandidate(candidate)"
           class="ml-3 bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
         >
           Approve
         </button>
         <button
+          (click)="rejectCandidate(candidate)"
           class="bg-blue-300 border-2 rounded-xl p-2 hover:bg-blue-600 hover:text-white w-20"
         >
           Reject
@@ -69,8 +72,11 @@
   </div>
   <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
     <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
-    <div class="grid grid-cols-1">
-      <span class="self-center pl-2 mb-2 py-2 bg-green-300">Ivan Ivanov</span>
+    <span *ngIf="approvedCandidates.length === 0">Nobody is approved</span>
+    <div *ngFor="let candidate of approvedCandidates" class="grid grid-cols-1">
+      <span class="self-center pl-2 mb-2 py-2 bg-green-300">{{
+        candidate.username
+      }}</span>
     </div>
   </div>
 

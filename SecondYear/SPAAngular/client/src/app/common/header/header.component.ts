@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { OrganizationService } from 'src/app/services/organization.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,13 +9,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  user: any = true;
+  user: any = undefined;
   subscription: Subscription = new Subscription();
 
-  constructor(
-    private userService: UserService,
-    private organizatoinService: OrganizationService
-  ) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
     this.subscription = this.userService
@@ -28,5 +25,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout() {
     this.userService.logout();
+    this.router.navigate(['../login']);
   }
 }
