@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllUsersGuard } from './auth/all-users.guard';
+import { IsGuestGuard } from './auth/is-guest.guard';
+import { IsOrganizationGuard } from './auth/is-organization.guard';
+import { IsUserGuard } from './auth/isUser.guard';
 import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.component';
 import { CreateAdPageComponent } from './pages/create-ad-page/create-ad-page.component';
 import { EditJobPageComponent } from './pages/edit-job-page/edit-job-page.component';
@@ -18,38 +22,47 @@ const routes: Routes = [
   },
   {
     path: 'jobs',
+    // canActivate: [AllUsersGuard],
     component: JobsComponent,
   },
   {
     path: 'login',
+    // canActivate: [IsGuestGuard],
     component: LoginPageComponent,
   },
   {
     path: 'register',
+    // canActivate: [IsGuestGuard],
     component: RegisterPageComponent,
   },
   {
     path: 'create',
+    // canActivate: [IsOrganizationGuard],
     component: CreateAdPageComponent,
   },
   {
     path: 'myJobs',
+    // canActivate: [IsOrganizationGuard],
     component: MyJobsComponent,
   },
   {
     path: 'editJob/:id',
+    // canActivate: [IsOrganizationGuard],
     component: EditJobPageComponent,
   },
   {
     path: 'details/:id',
+    // canActivate: [AllUsersGuard],
     component: JobDetailsComponent,
   },
   {
     path: 'appliedJobs',
+    // canActivate: [IsUserGuard],
     component: AppliedJobsComponent,
   },
   {
     path: 'profile',
+    // canActivate: [IsUserGuard],
     component: ProfilePageComponent,
   },
 ];
