@@ -22,47 +22,47 @@ const routes: Routes = [
   },
   {
     path: 'jobs',
-    // canActivate: [AllUsersGuard],
+    canActivate: [AllUsersGuard],
     component: JobsComponent,
   },
   {
     path: 'login',
-    // canActivate: [IsGuestGuard],
+    canActivate: [IsGuestGuard],
     component: LoginPageComponent,
   },
   {
     path: 'register',
-    // canActivate: [IsGuestGuard],
+    canActivate: [IsGuestGuard],
     component: RegisterPageComponent,
   },
   {
     path: 'create',
-    // canActivate: [IsOrganizationGuard],
+    canActivate: [IsOrganizationGuard],
     component: CreateAdPageComponent,
   },
   {
     path: 'myJobs',
-    // canActivate: [IsOrganizationGuard],
+    canActivate: [IsOrganizationGuard],
     component: MyJobsComponent,
   },
   {
     path: 'editJob/:id',
-    // canActivate: [IsOrganizationGuard],
+    canActivate: [IsOrganizationGuard],
     component: EditJobPageComponent,
   },
   {
     path: 'details/:id',
-    // canActivate: [AllUsersGuard],
+    canActivate: [AllUsersGuard],
     component: JobDetailsComponent,
   },
   {
     path: 'appliedJobs',
-    // canActivate: [IsUserGuard],
+    canActivate: [IsUserGuard],
     component: AppliedJobsComponent,
   },
   {
     path: 'profile',
-    // canActivate: [IsUserGuard],
+    canActivate: [IsUserGuard],
     component: ProfilePageComponent,
   },
 ];

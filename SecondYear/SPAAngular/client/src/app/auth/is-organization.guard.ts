@@ -29,7 +29,7 @@ export class IsOrganizationGuard implements CanActivate {
     if (isOrganization && !isUser) {
       return true;
     }
-    this.router.navigate(['/login']);
+    this.router.navigate(['/jobs']);
     return false;
   }
 }

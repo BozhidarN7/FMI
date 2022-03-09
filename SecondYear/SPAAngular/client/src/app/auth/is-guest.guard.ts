@@ -26,7 +26,7 @@ export class IsGuestGuard implements CanActivate {
     const isUser = this.authService.isUserGuard();
     const isOrganization = this.authService.isOrganizationGuard();
 
-    if (!isUser && !isUser) {
+    if (!isUser && !isOrganization) {
       return true;
     }
     this.router.navigate(['/jobs']);
