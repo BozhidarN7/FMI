@@ -1,6 +1,6 @@
 # **Important!!!**
 
-## When you run the app please do not refresh the page while you are using it because it is highly possible something to break because all the data is stored locally and will be losed if page is refreshed. If you accidentally refresh the page start your test from the begining by first login. Pleae read the next section too!
+## When you run the app please do not refresh the page while you are using it because it is highly possible something to break because all the data is stored locally and will be losed if page is refreshed. If you accidentally refresh the page start your test from the begining by first clearing the localstorage and then login. Pleae read the next section too!
 
 ## Aditional info
 
