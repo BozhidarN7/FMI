@@ -56,6 +56,6 @@ export class UserService {
 
   deleteAccount(userId: string) {
     this.logout();
-    // this.users.splice(this.users.indexOf(this.users.find(user) => user._id === userId))
+    this.users.splice(this.users.indexOf(this.findUserById(userId)), 1);
   }
 }

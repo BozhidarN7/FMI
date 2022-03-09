@@ -70,6 +70,13 @@ export class ProfilePageComponent implements OnInit {
   }
 
   deleteAccount() {
-    this.userService.deleteAccount(this.userId);
+    const confirm = window.confirm(
+      'Are you sure you want to delete your account!'
+    );
+
+    if (confirm) {
+      this.userService.deleteAccount(this.userId);
+      this.router.navigate(['../register']);
+    }
   }
 }
