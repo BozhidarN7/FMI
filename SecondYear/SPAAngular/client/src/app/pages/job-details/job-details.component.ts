@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from 'src/app/interfaces/commonInterfaces';
 import { JobService } from 'src/app/services/job.service';
 import { UserService } from 'src/app/services/user.service';
@@ -33,6 +33,7 @@ export class JobDetailsComponent implements OnInit {
   approvedCandidates: any = [];
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private jobService: JobService,
     private userServie: UserService
@@ -96,5 +97,18 @@ export class JobDetailsComponent implements OnInit {
       ),
       1
     );
+  }
+
+  edit() {
+    this.router.navigate(['../editJob', this.jobId]);
+  }
+
+  delete() {
+    const confirm = window.confirm('Are you sure you want to delte this job!');
+
+    if (confirm) {
+      this.jobService.deleteJob(this.jobId);
+      this.router.navigate(['../myJobs']);
+    }
   }
 }

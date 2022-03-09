@@ -97,4 +97,17 @@ export class JobService {
       (app) => app._id == applicationId
     )!.status = 'rejected';
   }
+
+  deleteJob(jobId: string) {
+    this.jobs.splice(this.jobs.indexOf(this.getJobById(jobId)!), 1);
+  }
+
+  deleteAllUserJobs(userId: string) {
+    for (let i = 0; i < this.jobs.length; i++) {
+      if (this.jobs[i].creatorId === userId) {
+        this.jobs.splice(i, 1);
+        i--;
+      }
+    }
+  }
 }

@@ -22,11 +22,13 @@
     </div>
     <div *ngIf="role === 'organization'" class="self-center">
       <button
+        (click)="edit()"
         class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20"
       >
         Edit
       </button>
       <button
+        (click)="delete()"
         class="bg-red-300 border-2 rounded-xl p-2 hover:bg-red-600 hover:text-white w-20"
       >
         Delete
