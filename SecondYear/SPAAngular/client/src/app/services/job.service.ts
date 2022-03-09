@@ -92,6 +92,17 @@ export class JobService {
     )!.status = 'approved';
   }
 
+  checkApplication(userId: string, jobId: string) {
+    const status = this.getJobById(jobId)!.applications.find(
+      (app) => app.userId === userId
+    )?.status;
+    console.log(status);
+    if (!status) {
+      return '';
+    }
+    return status;
+  }
+
   rejectApplication(jobId: string, applicationId: string) {
     this.getJobById(jobId)!.applications.find(
       (app) => app._id == applicationId

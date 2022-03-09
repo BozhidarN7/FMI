@@ -28,7 +28,8 @@ export class JobDetailsComponent implements OnInit {
   role = '';
   liked = false;
   applied = false;
-  applicationApproved = false;
+  jobOwner = false;
+  applicationApproved = '';
   appliedCandidates: any = [];
   approvedCandidates: any = [];
 
@@ -36,7 +37,7 @@ export class JobDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private jobService: JobService,
-    private userServie: UserService
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -44,12 +45,17 @@ export class JobDetailsComponent implements OnInit {
     this.userId = JSON.parse(localStorage.getItem('user')!).userId;
     this.jobId = this.route.snapshot.paramMap.get('id')!;
     this.job = this.jobService.getJobById(this.jobId)!;
-    this.getApplications();
 
     if (this.job) {
       this.liked = this.job.usersLiked.includes(this.userId);
       this.applied = this.job.usersApplied.includes(this.userId);
       this.job.applications.find((app) => app.userId === this.userId);
+      this.getApplications();
+      this.applicationApproved = this.jobService.checkApplication(
+        this.userId,
+        this.jobId
+      );
+      this.jobOwner = this.job.creatorId === this.userId ? true : false;
     }
   }
 
@@ -66,13 +72,13 @@ export class JobDetailsComponent implements OnInit {
     const applications = this.jobService.getApplications(this.jobId);
     applications.forEach((application) => {
       if (application.status === 'pending') {
-        const user = this.userServie.findUserById(application.userId);
+        const user = this.userService.findUserById(application.userId);
         this.appliedCandidates.push({
           ...user,
           applicationId: application._id,
         });
       } else {
-        const user = this.userServie.findUserById(application.userId);
+        const user = this.userService.findUserById(application.userId);
         this.approvedCandidates.push(user);
       }
     });

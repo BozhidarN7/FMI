@@ -14,7 +14,7 @@
     <span class="text-white">Register</span>
   </a>
 
-  <ng-container *ngIf="user">
+  <ng-container *ngIf="user && user.role === 'user'">
     <a
       routerLink="../appliedJobs"
       style="margin-left: auto; margin-right: 2rem"
@@ -34,6 +34,13 @@
     <a routerLink="../myJobs" style="margin-right: 2rem">
       <span class="text-white">My Jobs</span>
     </a>
+    <button
+      (click)="deleteAccount()"
+      style="margin-right: 2rem"
+      class="text-white cursor-pointer"
+    >
+      Delete Account
+    </button>
     <button (click)="logout()" class="text-white cursor-pointer">Logout</button>
   </ng-container>
 </div>

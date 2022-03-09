@@ -20,7 +20,7 @@
         <span class="font-bold">Likes: </span>{{ job.likes }}
       </span>
     </div>
-    <div *ngIf="role === 'organization'" class="self-center">
+    <div *ngIf="role === 'organization' && jobOwner" class="self-center">
       <button
         (click)="edit()"
         class="bg-green-300 border-2 rounded-xl p-2 hover:bg-green-600 hover:text-white w-20"
@@ -51,7 +51,10 @@
       </button>
     </div>
   </div>
-  <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
+  <div
+    *ngIf="role === 'organization' && jobOwner"
+    class="overflow-y-scroll h-[20rem]"
+  >
     <span class="font-bold mb-3 block text-xl">Candidates: </span>
     <span *ngIf="appliedCandidates.length === 0">Nobody has applied yet!</span>
     <div *ngFor="let candidate of appliedCandidates" class="grid grid-cols-2">
@@ -72,7 +75,10 @@
       </div>
     </div>
   </div>
-  <div *ngIf="role === 'organization'" class="overflow-y-scroll h-[20rem]">
+  <div
+    *ngIf="role === 'organization' && jobOwner"
+    class="overflow-y-scroll h-[20rem]"
+  >
     <span class="font-bold mb-3 block text-xl">Approved Candidates: </span>
     <span *ngIf="approvedCandidates.length === 0">Nobody is approved</span>
     <div *ngFor="let candidate of approvedCandidates" class="grid grid-cols-1">
@@ -93,11 +99,17 @@
     class="my-3 shadow-xl rounded-xl w-ful row-start-1 row-end-2 col-start-2 col-end-3"
   >
     <h4 class="font-bold mb-3 pl-5 pt-5">Application status</h4>
-    <p *ngIf="!applicationApproved" class="px-5">
+    <p
+      *ngIf="applicationApproved === 'pending' || !applicationApproved"
+      class="px-5"
+    >
       Your applications is still not approved
     </p>
-    <p *ngIf="applicationApproved" class="px-5">
-      Your applications is approved. Your in!. Congrats!
+    <p *ngIf="applicationApproved === 'approved'" class="px-5">
+      Your applications is approved. Your in! Congrats!
+    </p>
+    <p *ngIf="applicationApproved === 'rejected'" class="px-5">
+      Your applications is rejected.
     </p>
   </div>
 </div>

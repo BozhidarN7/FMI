@@ -79,7 +79,7 @@ export class RegisterPageComponent implements OnInit {
       });
       localStorage.setItem(
         'user',
-        JSON.stringify({ user: _id, role: 'organization' })
+        JSON.stringify({ userId: _id, role: 'organization' })
       );
     } else {
       const _id = uuid.v4();
