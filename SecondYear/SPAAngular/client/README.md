@@ -1,4 +1,26 @@
-# Client
+# **Important!!!**
+
+## When you run the app please do not refresh the page while you are using it because it is highly possible something to break because all the data is stored locally and will be losed if page is refreshed. If you accidentally refresh the page start your test from the begining by first login. Pleae read the next section too!
+
+## Aditional info
+
+There are two users and two jobs hardcoded in the application memory. You can use this users to test the app. Use there credentials to login
+
+Ordinary user:
+
+- email: test@abv.bg
+- password: asdf
+
+Organization:
+
+- email: test1@abv.bg
+- password: asdf
+
+The organization has two jobs created.
+
+If you have any questions do not hesitate to contact me on stu2001321031@uni-plovdiv.bg
+
+## Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
